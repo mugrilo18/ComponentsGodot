@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcinw30udtsw6"]
+
+[ext_resource type="PackedScene" uid="uid://bi6dp8ag1gxl6" path="res://Scenes/character_body_2d.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bqybdgm2rm7li" path="res://Scenes/health_component.tscn" id="2_8gbba"]
+
+[node name="Main" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_bo1nx")]
+position = Vector2(336, 159)
+
+[node name="HealthComponent" parent="CharacterBody2D" node_paths=PackedStringArray("character") instance=ExtResource("2_8gbba")]
+character = NodePath("..")
+life = true
