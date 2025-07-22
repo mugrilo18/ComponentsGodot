@@ -7,8 +7,6 @@ extends Node2D
 
 func _ready() -> void:
 	HasLife()
-	print(maxHealth)
-	
 
 func HasLife():
 	if life == true:
