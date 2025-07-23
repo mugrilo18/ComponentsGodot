@@ -1,8 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcinw30udtsw6"]
+[gd_scene load_steps=5 format=3 uid="uid://bcinw30udtsw6"]
 
 [ext_resource type="PackedScene" uid="uid://bi6dp8ag1gxl6" path="res://Scenes/character_body_2d.tscn" id="1_bo1nx"]
-[ext_resource type="PackedScene" uid="uid://bbav88iusnlab" path="res://Scenes/HUD.tscn" id="1_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://bqybdgm2rm7li" path="res://Scenes/health_component.tscn" id="2_8gbba"]
 [ext_resource type="Script" uid="uid://bskdrg4447xpj" path="res://Scripts/character_body_2d.gd" id="2_jjvhh"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8gbba"]
@@ -12,17 +10,9 @@ size = Vector2(1638, 43)
 
 [node name="Main" type="Node2D"]
 
-[node name="HUD" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("1_jjvhh")]
-healthComponent = NodePath("../CharacterBody2D/HealthComponent")
-
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_bo1nx")]
 position = Vector2(336, 159)
 script = ExtResource("2_jjvhh")
-
-[node name="HealthComponent" parent="CharacterBody2D" node_paths=PackedStringArray("character") instance=ExtResource("2_8gbba")]
-character = NodePath("..")
-life = true
-maxHealth = 3
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

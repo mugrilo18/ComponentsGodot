@@ -4,9 +4,12 @@ extends Node2D
 @export var life:bool
 @export var maxHealth:int
 @export var disapear:bool
+@export var attackComponent:Attack
 
-func _ready() -> void:
+
+func _process(delta: float) -> void:
 	HasLife()
+	print(maxHealth)
 
 func HasLife():
 	if life == true:
@@ -16,7 +19,12 @@ func HasLife():
 		pass
 
 func CharacterDie():
-	if disapear == true and !character == null:
+	if disapear == true and character != null:
 		character.queue_free()
 	else:
 		pass
+
+func Damage(attack):
+	if attackComponent != null:
+		attack = attackComponent.attackDamage
+		maxHealth = maxHealth - attack

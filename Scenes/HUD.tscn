@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbav88iusnlab"]
 
-[ext_resource type="Script" uid="uid://5473ib1tnqcr" path="res://Scenes/hud.gd" id="1_sd512"]
+[ext_resource type="Script" uid="uid://5473ib1tnqcr" path="res://Scripts/hud.gd" id="1_sd512"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_entsu"]
 font_size = 71

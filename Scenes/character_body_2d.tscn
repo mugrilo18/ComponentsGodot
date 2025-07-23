@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bi6dp8ag1gxl6"]
+[gd_scene load_steps=6 format=3 uid="uid://bi6dp8ag1gxl6"]
 
 [ext_resource type="Texture2D" uid="uid://blxtmdh3vv8a0" path="res://Images/Sprites/character_green_idle.png" id="1_ymxaj"]
+[ext_resource type="PackedScene" uid="uid://bqybdgm2rm7li" path="res://Scenes/Components/health_component.tscn" id="2_88kja"]
+[ext_resource type="PackedScene" uid="uid://b6utdejix3mk2" path="res://Scenes/Components/attack_component.tscn" id="3_it8n0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_88kja"]
 animations = [{
@@ -25,3 +27,12 @@ sprite_frames = SubResource("SpriteFrames_88kja")
 position = Vector2(0, 7.5)
 scale = Vector2(4, 4)
 shape = SubResource("CapsuleShape2D_it8n0")
+
+[node name="HealthComponent" parent="." node_paths=PackedStringArray("character", "attackComponent") instance=ExtResource("2_88kja")]
+character = NodePath("..")
+life = true
+maxHealth = 3
+attackComponent = NodePath("../AttackComponent")
+
+[node name="AttackComponent" parent="." instance=ExtResource("3_it8n0")]
+attackDamage = 1
