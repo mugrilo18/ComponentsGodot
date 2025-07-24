@@ -4,7 +4,7 @@ extends Node2D
 @export var life:bool
 @export var maxHealth:int
 @export var disapear:bool
-@export var attackComponent:Attack
+@export var attackComponent : AttackComponent
 
 
 func _process(delta: float) -> void:

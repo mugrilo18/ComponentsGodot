@@ -1,4 +1,4 @@
 extends Node2D
-class_name Attack
+class_name AttackComponent
 
 @export var attackDamage : int
